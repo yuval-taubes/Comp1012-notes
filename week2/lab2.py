@@ -7,9 +7,9 @@ width = float(input("what is the width of the triangle: "))
 def calc_triange_area(height, width):
     return (height * width) / 2
 
-triangleArea = calc_triange_area(height, width)
+triangle_area = calc_triange_area(height, width)
 
-print("The area of the triangle is {}".format(triangleArea))
+print("The area of the triangle is {}".format(triangle_area))
 
 # convert miles to km
 
@@ -18,9 +18,9 @@ mile_distance = float(input("How many miles: "))
 def convert_mile_to_km(mile):
     return mile * 1.61
 
-kmDistance = convert_mile_to_km(mile_distance)
+km_distance = convert_mile_to_km(mile_distance)
 
-print("The distnace in km is {:0.2f}".format(kmDistance))
+print("The distnace in km is {:0.2f}".format(km_distance))
 
 
 #Favorite Foods 
