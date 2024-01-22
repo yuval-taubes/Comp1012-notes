@@ -11,8 +11,8 @@ calories_consumed = 0
 while(run_menu):
     run_food_input_menu = True
 
-    weight = float(input("Please enter your weight: "))
-    height = float(input("please enter you height: "))
+    weight = float(input("Please enter your weight (kg): "))
+    height = float(input("please enter you height (meters): "))
 
     bmi = weight / (height *  height)
     bmi_category = None
@@ -57,12 +57,17 @@ while(run_menu):
         else:
             break
 
-        grams = float(input("Enter the portion size (in grams) for {}".format(food_selection)))
+        grams = float(input("Enter the portion size (in grams): "))
 
-        calories_consumed = grams * food_selection
+        calories = grams * food_selection
+        calories_consumed += calories
+        print("This meal contained {:.2f} calories".format(calories))
 
+
+    print("you have consumed {} calories".format(calories_consumed))
     if(calories_consumed > recomended_calories):
         print("you have exceded your recomended calories")
     elif(calories_consumed < recomended_calories):
         print("you have consumed fewer calories than recomended")
-        
+    else:
+        print("You have consumed the recomended amount of calories")
