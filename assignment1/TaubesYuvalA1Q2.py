@@ -34,6 +34,7 @@ while(loop_menu):
     else:
         print("The number is zero.")
 
+
     absolute_value = abs(number)
 
     if 0 <= absolute_value <= 9:
@@ -41,9 +42,20 @@ while(loop_menu):
         single_digit_magnitude_count += 1
     elif 10 <= absolute_value <= 99:
         print("The number has: Two Digits")
-        
+        two_digit_magnitude_count += 1
     else:
         print("The number has: Three or More Digits")
+        three_digit_magnitude_count += 1
+
+
+print("-----------------------summary----------------------")
+print("odd numbers {}".format(odd_number_count))
+print("even number {}".format(even_number_count))
+print("positve number {}".format(positive_number_count))
+print("negative number {}".format(negative_number_count))
+print("single digit number {}".format(single_digit_magnitude_count))
+print("two digit number {}".format(two_digit_magnitude_count))
+print("three digit number {}".format(three_digit_magnitude_count))
 
 
 
