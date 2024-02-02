@@ -52,7 +52,7 @@ while(run_start_menu):
         province = "ON"
     else:
         print("Not a valid input")
-        break
+        continue
     
     is_staff_input = input("are you a staff (ex. Yes or No)")
     is_staff = False
@@ -98,7 +98,13 @@ while(run_start_menu):
         run_quantity_menu = False
 
     while(run_quantity_menu):
-        quantity = int(input("Please enter how many you want of {}:".format(book_selection_input)))
+        quantity=None
+        quantity_input = (input("Please enter how many you want of {}:".format(book_selection_input)))
+        if(quantity_input.isdecimal() == False):
+            continue
+        
+        quantity=int(quantity_input)
+
         run_quantity_menu = False
 
         retail_cost = book_selection * quantity
@@ -138,15 +144,15 @@ while(run_start_menu):
     keep_shopping = input("do you want to keep shopping? (ex. Yes or No)")
     if keep_shopping.lower() == "no":
         print("the retail cost is ${}".format(retail_cost))
-        print("you saved ${} from sales".format(sale_discount))
-        print("you saved ${} from the staff discount".format(staff_discount_applied))
-        print("you saved a total of ${}".format(total_discount))
+        print("you saved ${:.2f} from sales".format(sale_discount))
+        print("you saved ${:.2f} from the staff discount".format(staff_discount_applied))
+        print("you saved a total of ${:.2f}".format(total_discount))
         print("the new total before taxes is ${}".format(cost_amount))
         print("you earned {} reward points".format(reward_points_earned))
         print("pst: ${:.2f} \ngst: ${:.2f} \nhst: ${:.2f}".format(pst, gst, hst))
-        print("the shipping cost is ${}".format(shipping_cost))
-        print("the total cost is ${}".format(total_cost))
-        print("The bookstore earned ${}".format(total_bookstore_profit))
+        print("the shipping cost is ${:.2f}".format(shipping_cost))
+        print("the total cost is ${:.2f}".format(total_cost))
+        print("The bookstore earned ${:.2f}".format(total_bookstore_profit))
 
         run_start_menu = False
 

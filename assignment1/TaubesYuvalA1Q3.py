@@ -1,8 +1,23 @@
-APPLE_CALORIES_PER_GRAM = 52 / 100
-CHICKEN_BREAST_CALORIES_PER_GRAM = 165 / 150
-PASTA_CALORIES_PER_GRAM = 158 / 200
-AVOCADO_CALORIES_PER_GRAM = 80 / 50
-SPINACH_CALORIES_PER_GRAM = 11 / 50
+# Constants for calories per gram
+APPLE_CALORIES = 52
+CHICKEN_BREAST_CALORIES = 165
+PASTA_CALORIES = 158
+AVOCADO_CALORIES = 80
+SPINACH_CALORIES = 11
+
+# Constants for portion size in grams
+APPLE_PORTION_SIZE = 100
+CHICKEN_BREAST_PORTION_SIZE = 150
+PASTA_PORTION_SIZE = 200
+AVOCADO_PORTION_SIZE = 50
+SPINACH_PORTION_SIZE = 50
+
+# Constants for calories per portion size
+APPLE_CALORIES_PER_GRAM = APPLE_CALORIES / APPLE_PORTION_SIZE
+CHICKEN_BREAST_CALORIES_PER_GRAM = CHICKEN_BREAST_CALORIES / CHICKEN_BREAST_PORTION_SIZE
+PASTA_CALORIES_PER_GRAM = PASTA_CALORIES / PASTA_PORTION_SIZE
+AVOCADO_CALORIES_PER_GRAM = AVOCADO_CALORIES / AVOCADO_PORTION_SIZE
+SPINACH_CALORIES_PER_GRAM = SPINACH_CALORIES / SPINACH_PORTION_SIZE
 
 run_menu = True
 
@@ -18,6 +33,7 @@ while(run_menu):
     bmi_category = None
     recomended_calories = None
 
+    #bmi calculation and output
     if bmi < 18.5:
         bmi_category = "Underweight"
         recomended_calories = 2200
@@ -36,7 +52,7 @@ while(run_menu):
 
     while(run_food_input_menu):
         print("diet planning")
-        print("Choose form the following foods (enter 0 when done) \n1.Apple \n2. Chicken Breast \n3. Pasta \n4. Avocado \n5. Spinach")
+        print("Choose form the following foods (enter 0 when done) \n1. Apple \n2. Chicken Breast \n3. Pasta \n4. Avocado \n5. Spinach")
         food_selection_input = int(input("enter your selection: "))
         food_selection = None
         if(food_selection_input == 1):

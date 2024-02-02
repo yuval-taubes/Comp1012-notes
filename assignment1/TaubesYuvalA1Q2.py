@@ -36,7 +36,7 @@ while(loop_menu):
 
 
     absolute_value = abs(number)
-
+    
     if 0 <= absolute_value <= 9:
         print("The number has: One Digit")
         single_digit_magnitude_count += 1
